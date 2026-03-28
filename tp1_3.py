@@ -1,4 +1,3 @@
-
 from collections.abc import Sequence
 from dataclasses import dataclass
 from collections import deque
@@ -28,7 +27,7 @@ def main(cajas: Sequence[tuple[float, float, float]]) -> tuple[float, list[tuple
     for i in range(1, len(permutations)):
         max_local_height = permutations[i].z
         
-        for j in range(1, i - 1):
+        for j in range(0, i - 1):
             if permutations[i].x < permutations[j].x and permutations[i].y < permutations[j].y:
                 if opt[j] + permutations[i].z > max_local_height:
                     max_local_height = opt[j] + permutations[i].z
