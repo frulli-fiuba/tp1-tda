@@ -27,10 +27,14 @@ class TestCajas(unittest.TestCase):
         self.assertEqual(orden, [(0, (1, 1))])
 
     def test_cajas_2(self):
-        # Caso facil: una sola caja, tiene altura 1, el orden es la unica caja con base 1 y altura 1
         altura, orden = cajas([(1, 5, 6), (2, 4, 7)])
         self.assertEqual(altura, 10)
         self.assertEqual(orden, [(1, (2, 7)), (0, (1, 5))])
+    
+    def test_cajas_3(self):
+        altura, orden = cajas([(20, 20, 20), (2, 4, 7)])
+        self.assertEqual(altura, 29)
+        self.assertEqual(orden, [(0, (20, 20)), (1, (4, 7)), (1, (2, 4))])
 
 if __name__ == "__main__":
     unittest.main()
