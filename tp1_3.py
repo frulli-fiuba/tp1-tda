@@ -28,7 +28,7 @@ def main(cajas: Sequence[tuple[float, float, float]]) -> tuple[float, list[tuple
     for i in range(1, len(rotations)):
         max_local_height = rotations[i].z
         
-        for j in range(0, i - 1):
+        for j in range(0, i):
             if rotations[i].x < rotations[j].x and rotations[i].y < rotations[j].y:
                 if opt[j] + rotations[i].z > max_local_height:
                     max_local_height = opt[j] + rotations[i].z
