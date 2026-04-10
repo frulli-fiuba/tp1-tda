@@ -36,5 +36,16 @@ class TestCajas(unittest.TestCase):
         self.assertEqual(altura, 29)
         self.assertEqual(orden, [(0, (20, 20)), (1, (4, 7)), (1, (2, 4))])
 
+    def test_cajas_4(self):
+        altura, orden = cajas([(20, 20, 20), (2, 4, 7), (1, 1, 1)])
+        self.assertEqual(altura, 30)
+        self.assertEqual(orden, [(0, (20, 20)), (1, (4, 7)), (1, (2, 4)), (2, (1, 1))])
+        
+    def test_cajas_5(self):
+        altura, orden = cajas([(10, 11, 12), (7, 8, 9)])
+        self.assertEqual(altura, 38)
+        self.assertEqual(orden, [(0, (11, 12)), (0, (10, 11)), (1, (8, 9)), (1, (7, 8))])
+        
+
 if __name__ == "__main__":
     unittest.main()
